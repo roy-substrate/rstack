@@ -166,3 +166,36 @@ A next-generation device would combine:
 | **Wearable/portable** | Deveillance Spectre I (when available) | $1,199 |
 | **Software-only (free)** | Revoke OS permissions + DNS blocking | $0 |
 | **Comprehensive** | Ultrasonic jammer + USB audio dongle + network blocking | $500-1,500 |
+
+---
+
+## Practical Recommendations by Threat Model
+
+| Scenario | Best Approach |
+|----------|--------------|
+| Block bot-based tools (Otter, Fireflies) from your meetings | Meeting platform admin controls: block domains, require auth |
+| Prevent Granola on **your own** machine | Revoke microphone + screen recording permissions in OS settings |
+| Prevent Granola on **someone else's** machine recording your voice via their mic | Ultrasonic jammer in your room (affects their laptop mic if in range) |
+| Prevent Granola on **someone else's** machine recording your voice via system audio | **Cannot be blocked by hardware** — your voice arrives as digital audio through the meeting platform. Only solution: don't speak, or use meeting platform controls to prevent recording |
+| Conference room privacy from any hidden recording device | Ceiling-mounted ultrasonic jammer array (iSecus AJ-316D or Selcom Security) + sound masking system |
+| Personal portable protection | Wearable ultrasonic jammer bracelet (DIY from UChicago design) or portable commercial unit |
+
+---
+
+## Key Academic Papers & Patents
+
+1. **"Wearable Microphone Jamming"** — Chen, Li, Teng, Nagels, Li, Lopes, Zhao, Zheng (UChicago). CHI 2020. Seminal work: wearable bracelet jams 87%+ of words in all directions using ring-layout transducers.
+2. **"Understanding the Effectiveness of Ultrasonic Microphone Jammer"** — arXiv:1904.08490 (2019). Explains MEMS microphone hardware non-linearity mechanism.
+3. **"UltraJam: Ultrasonic adaptive jammer based on nonlinearity effect"** — ScienceDirect (2023). Adaptive signals demodulated by mic circuits into low-frequency jamming.
+4. **"Dynamic Ultrasonic Jamming via Time-Frequency Mosaic"** — MDPI Electronics (2025). Frequency-coded jamming adapting to speaker voice characteristics.
+5. **US Patent US20230131816A1** — "Wearable microphone jammer" (UChicago team). Covers bracelet form factor with ring-layout ultrasonic transducers.
+
+---
+
+## Known Limitations of Ultrasonic Jammers
+
+- **Blind spots**: Destructive interference patterns mean no device has perfect 360° spherical coverage. UChicago bracelet drops from 97% to ~75% at 90° vertical angles.
+- **Range**: Most effective within 1-6 meters only.
+- **Adaptive noise cancellation**: Fixed-frequency jammers increasingly vulnerable to AI-based noise reduction. Newer adaptive/randomized jammers (UltraJam, TFM) attempt to counter this.
+- **Device variability**: Different MEMS microphones (iPhone vs Android vs laptop) have different nonlinearity characteristics.
+- **Does NOT block system audio capture**: If someone runs Granola capturing their system audio output (what their speakers play), a jammer in your room does not affect that digital audio path. It only jams physical microphones in range.
